@@ -1,3 +1,4 @@
+import 'package:covidapp/sceens/home_screen.dart';
 import 'package:covidapp/sceens/reset_password_screen.dart';
 import 'package:covidapp/sceens/signup.dart';
 import 'package:covidapp/sceens/verify_email_screen.dart';
@@ -121,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: Text('Забыли пароль?'))),
                     SizedBox(height: 20),
                     MaterialButton(
-                        color: Colors.amber,
+                        color: Colors.red[200],
                         minWidth: 250,
                         elevation: 10,
                         height: size.width / 10,
@@ -153,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => VerifyEmailScreen(),
+                                  builder: (context) => HomeScreen(),
                                 ),
                               );
                             }
@@ -174,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                           child: Text(' Зарегистрироваться',
                               style:
-                                  TextStyle(color: Colors.amber, fontSize: 15)),
+                                  TextStyle(color: Colors.red[200], fontSize: 15)),
                         ),
                       ],
                     ),

@@ -23,7 +23,7 @@ class _SymptomScreenState extends State<SymptomScreen> {
   bool nopainHead = false;
   bool speedPain = false;
   bool nospeedPain = false;
-  String temp, day, cough;
+  String temp, day, cough, status;
   DateTime date = DateTime.now();
   User user = FirebaseAuth.instance.currentUser;
   DatabaseService myDataBase;
@@ -45,6 +45,33 @@ class _SymptomScreenState extends State<SymptomScreen> {
         padding: EdgeInsets.all(20),
         child: ListView(
           children: [
+            SizedBox(height: 50),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: DropdownButton<String>(
+                items: <String>[
+                  'Положительный результат тестирования',
+                  'Отрицательный результат тестирования',
+                  'Ожидание результатов тестирования',
+                  'Был в контакте с подтвержденным случаем',
+                  'Был в контакте с потенциальным носителем вируса',
+                  'Симптомы, связанные с вирусом'
+                ].map((String value) {
+                  return DropdownMenuItem<String>(
+                    child: Text(value),
+                    value: value,
+                  );
+                }).toList(),
+                onChanged: (value) {
+                  setState(() {
+                    status = value;
+                  });
+                },
+                isExpanded: true,
+                value: status,
+                hint: Text('Ваш статус'),
+              ),
+            ),
             SizedBox(height: 50),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
@@ -268,7 +295,7 @@ class _SymptomScreenState extends State<SymptomScreen> {
             ),
             SizedBox(height: 50),
             MaterialButton(
-                color: Colors.amber,
+                color: Colors.red[200],
                 elevation: 2,
                 child: Text(
                   'Подтвердить',
@@ -297,7 +324,7 @@ class _SymptomScreenState extends State<SymptomScreen> {
                         fontSize: 16.0);
                   } else {
                     myDataBase
-                        .setUserSymptoms(temp, day, cough, smell, gorlo, diary, painHead, speedPain)
+                        .setUserSymptoms(temp, status, day, cough, smell, gorlo, diary, painHead, speedPain)
                         .then((value) {
                       if (temp == '38.0°C' || temp == '38.5°C') {
                         Fluttertoast.showToast(

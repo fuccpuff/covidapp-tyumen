@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Spacer(),
             MaterialButton(
-              color: Colors.amber,
+              color: Colors.red[200],
               onPressed: () {
                 Navigator.popAndPushNamed(context, 'login');
               },
@@ -127,13 +127,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           DetailCard(
                             size: size,
-                            subject: 'infections',
+                            subject: 'заболевших',
                             imageLocation: 'assets/infection.png',
                             totalCases: data['cases'],
                             newCases: data['todayCases'],
                           ),
                           DetailCard(
-                            subject: 'recoveries',
+                            subject: 'выздоровело',
                             size: size,
                             imageLocation: 'assets/recovered.png',
                             totalCases: data['recovered'],
@@ -147,14 +147,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           DetailCard(
                             size: size,
-                            subject: 'deaths',
+                            subject: 'смертей',
                             imageLocation: 'assets/death.png',
                             totalCases: data['deaths'],
                             newCases: data['todayDeaths'],
                           ),
                           DetailCard(
                             size: size,
-                            subject: 'active',
+                            subject: 'болеющих',
                             imageLocation: 'assets/patient.png',
                             totalCases: data['active'],
                           )
@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               : Center(
                   child: SpinKitWave(
-                    color: Colors.amber,
+                    color: Colors.red[200],
                     size: 80.0,
                   ),
                 )),

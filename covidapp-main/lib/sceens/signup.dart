@@ -163,7 +163,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   SizedBox(height: 25),
                   MaterialButton(
-                      color: Colors.amber,
+                      color: Colors.red[200],
                       minWidth: 250,
                       elevation: 2,
                       height: size.width / 10,

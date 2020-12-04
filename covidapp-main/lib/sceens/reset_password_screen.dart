@@ -42,7 +42,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   SizedBox(height: size.height * 0.07),
                   SizedBox(height: 25),
                   MaterialButton(
-                      color: Colors.amber,
+                      color: Colors.red[200],
                       minWidth: 250,
                       elevation: 2,
                       height: size.width / 10,

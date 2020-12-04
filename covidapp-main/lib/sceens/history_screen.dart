@@ -131,6 +131,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                   return Padding(
                                     padding: EdgeInsets.all(5.0),
                                     child: DayWithCough(
+                                      status: doc['Status'],
                                       cough: doc['Cough Type'],
                                       day: doc['date'],
                                       taste: doc['Smell']
@@ -159,7 +160,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
               )
             : Center(
                 child: SpinKitWave(
-                  color: Colors.amber,
+                  color: Colors.red[200],
                   size: 80.0,
                 ),
               ));

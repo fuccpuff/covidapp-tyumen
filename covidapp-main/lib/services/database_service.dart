@@ -20,13 +20,14 @@ class DatabaseService {
   }
 
   Future setUserSymptoms(
-      String temp, String day, String cough, bool smell, bool gorlo, bool diary, bool painHead, bool speedPain) async {
+      String temp, String status, String day, String cough, bool smell, bool gorlo, bool diary, bool painHead, bool speedPain) async {
     return await userCollection
         .doc(userEmail)
         .collection('Symptoms')
         .doc()
         .set({
       "Temperature": temp,
+      "Status": status,
       "Cough Type": cough,
       "Day": day,
       "Smell": smell,
@@ -36,5 +37,6 @@ class DatabaseService {
       "speedPain": speedPain,
       "date": now.toString().substring(0, 16)
     });
+
   }
 }

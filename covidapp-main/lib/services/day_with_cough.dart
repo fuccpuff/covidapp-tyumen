@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DayWithCough extends StatelessWidget {
-  final String day, cough, temp, taste, gorlo, diary, painHead, speedPain;
-  DayWithCough({this.cough, this.day, this.temp, this.taste, this.gorlo, this.diary, this.painHead, this.speedPain});
+  final String day, cough, status, temp, taste, gorlo, diary, painHead, speedPain;
+  DayWithCough({this.cough, this.day, this.status, this.temp, this.taste, this.gorlo, this.diary, this.painHead, this.speedPain});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,8 @@ class DayWithCough extends StatelessWidget {
             TextSpan(text: 'Горло $gorlo\n'),
             TextSpan(text: 'Диарея $diary\n'),
             TextSpan(text: 'Головная боль $painHead\n'),
-            TextSpan(text: 'Утомляемость $speedPain')
+            TextSpan(text: 'Утомляемость $speedPain\n'),
+            TextSpan(text: 'Ваш статус: $status ')
           ],
         ),
       ),

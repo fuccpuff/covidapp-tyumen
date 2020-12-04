@@ -47,6 +47,7 @@ dependencies:
   geolocator: ^6.1.8+1
   loading_indicator: ^1.2.0
   provider: ^4.3.2+2
+  font_awesome_flutter: any
 
 
 
