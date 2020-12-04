@@ -49,7 +49,7 @@ class LocationPaneState extends State<LocationPane> {
 
     _markers.clear();
     documentList.forEach((DocumentSnapshot document) {
-      GeoPoint geopoint = document.data()['position']['geopoint']['name'];
+      GeoPoint geopoint = document.data()['position']['geopoint'];
 
       // double distance = center.distance(lat: geopoint.latitude, lng: geopoint.longitude);
 
