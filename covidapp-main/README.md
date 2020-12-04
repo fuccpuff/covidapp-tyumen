@@ -8,4 +8,4 @@ setup on your android device app-release.apk. register and use.
 
 # LINK ON PRESENTATION AND VIDEOPRESENTATION
 
-# https://drive.google.com/drive/u/0/folders/1VtgILrv95NUk2x1a0bXx1x1wFU9-2iDH
+# https://drive.google.com/drive/folders/1CS9gSti_232IXh_H3Z5a9lmVla1fC6--?usp=sharing
